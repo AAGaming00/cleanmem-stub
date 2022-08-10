@@ -10,9 +10,6 @@ INSTALLDIR  = ./
 .PHONY: all
 all: $(OUTPUTFILE)
 
-# Build libgeorgeringo.so from george.o, ringo.o, 
-# and georgeringo.o; subst is the search-and-replace 
-# function demonstrated in Recipe 1.16
 $(OUTPUTFILE): $(subst .cpp,.o,$(SOURCES)) 
 	$(CXX) -shared -fPIC $(LDFLAGS) -o $@ $^
 
